@@ -51,7 +51,7 @@ function About() {
                     <EditButton 
                         btnText='Download CV'
                         outline={true}
-                        onClick={DownloadResume()}
+                        onClick={DownloadResume}
                     />
                     <EditButton
                         btnText='View CV'
