@@ -687,9 +687,10 @@ h1,h2,h3,h4,h5,h6{
       flex: 1;
     }
 
+
     .hero-right .effect a{
       width: 25px;
-      margin-right: 10px;
+      font-size: 21px;
     }
     .hero-btn{
       flex-direction: column;
