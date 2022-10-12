@@ -1,0 +1,60 @@
+/* common styles !!! YOU DON'T NEED THEM */
+
+.effect .social-buttons {
+  display: flex;
+  justify-content: center;
+}
+
+
+/* styles for a common effect !!!YOU NEED THEM */
+
+
+.effect a {
+  text-decoration: none !important;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  margin-right: 1rem;
+  font-size: 25px;
+  overflow: hidden;
+  position: relative;
+  color: #212121;
+  /* border: 1px solid #212121; */
+}
+.effect a .social-icon {
+  position: relative;
+  z-index: 3;
+}
+
+.effect a:before {
+  content: "";
+  display: inline-block;
+  height: 100%;
+  vertical-align: middle;
+}
+.effect a .social-icon {
+  display: inline-block;
+  vertical-align: middle;
+}
+
+
+/* amiens effect */
+.effect.amiens a {
+  transition: all 0.2s linear 0.2s;
+}
+.effect.amiens a .social-icon {
+  transition: all 0.2s linear 0s;
+}
+.effect.amiens a:hover {
+  transition: all 0.2s linear 0s;
+  border-color: rgba(33, 33, 33, 0);
+}
+.effect.amiens a:hover .social-icon {
+  transform: scale(1.2);
+  text-shadow: 4px 0px 3px rgba(33, 33, 33, 0.3);
+  transition: all 0.2s linear 0.2s;
+}
+
