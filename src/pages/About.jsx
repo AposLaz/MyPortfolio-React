@@ -2,10 +2,11 @@ import React from 'react'
 import NewSection from '../components/NewSection'
 import EditButton from '../components/EditButton'
 import EditCard from '../components/EditCard'
+import { useNavigate } from "react-router-dom";
 
 function About() {
-
-    const DownloadResume = ()=>{
+    const DownloadResume = (e)=>{
+        e.preventDefault()
         console.log('OK')
         // using Java Script method to get PDF file
         fetch('cv-Lazidis.pdf').then(response => {
@@ -19,6 +20,11 @@ function About() {
                 alink.click();
             })
         })
+    }
+    let navigate = useNavigate(); 
+
+    const ViewResumeFunc = ()=>{
+        navigate('/resume')
     }
 
   return (
@@ -55,6 +61,7 @@ function About() {
                     />
                     <EditButton
                         btnText='View CV'
+                        action={ViewResumeFunc}
                     />
                 </div>
             </div>

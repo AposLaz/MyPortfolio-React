@@ -141,7 +141,7 @@ export const projectCardGitIcon = {
  */
 
 export const nav_mobile_style = {
-    textAlign: 'center'
+    textAlign: 'center',
 }
 
 export const list_item_mobile = {
@@ -149,7 +149,7 @@ export const list_item_mobile = {
     display: 'flex',
     flexDirection: 'column',
     flex: 1,
-    padding: '10px'
+    padding: '10px',
 }
 
 export const navbar_style = {

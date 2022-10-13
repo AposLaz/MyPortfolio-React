@@ -16,18 +16,32 @@ import {nav_mobile_style} from '../styles/styles'
 import {list_item_mobile} from '../styles/styles'
 import {navbar_style} from '../styles/styles'
 
+import {Link, useLocation} from 'react-router-dom' 
 
 const drawerWidth = 300;
 
 function DrawerAppBar(props) {
-  const { window } = props;
+
+  //change NavBar status
+  const [bool,setBool] = React.useState(true)
+
+  let location = useLocation();
+
+  React.useEffect(()=>{
+    if(location.pathname === '/resume') {
+      setBool(false)
+    }else{
+      setBool(true)
+    }
+  },[location])
+ 
+
   const [mobileOpen, setMobileOpen] = React.useState(false);
 
   const handleDrawerToggle = () => {
     setMobileOpen(!mobileOpen);
   };
-
-
+  
   //NavBar for mobile
   const drawer = (
     <Box onClick={handleDrawerToggle} sx={ nav_mobile_style }>
@@ -36,67 +50,84 @@ function DrawerAppBar(props) {
       </Typography>
       <Divider />
       <List>
-          <ListItem disablePadding sx={list_item_mobile}>
-              <NavLink 
-                className='nav-link-mobile'
-                activeClass="active"
-                to='home'
-                spy={true} 
-                smooth={true}
-                duration={1000} 
-                offset={-80}
-                onClick={handleDrawerToggle}
-                >
-                Home
-              </NavLink>
-          </ListItem>
-          <ListItem disablePadding sx={list_item_mobile}>
-              <NavLink 
-                className='nav-link-mobile'
-                activeClass="active"
-                to='about'
-                spy={true} 
-                smooth={true}
-                duration={1000} 
-                offset={-80}
-                onClick={handleDrawerToggle}
-                >
-                About
-              </NavLink>
-          </ListItem>
-          <ListItem disablePadding sx={list_item_mobile}>
-                <NavLink 
-                  className='nav-link-mobile'
-                  activeClass="active"
-                  to='skills'
-                  spy={true} 
-                  smooth={true}
-                  duration={1000} 
-                  offset={-80}
-                  onClick={handleDrawerToggle}
-                  >
-                  Skills
-              </NavLink>
-          </ListItem>
-          <ListItem disablePadding sx={list_item_mobile}>
+        {bool?(
+          <>
+            <ListItem disablePadding sx={list_item_mobile}>
             <NavLink 
-                  className='nav-link-mobile'
-                  activeClass="active"
-                  to='projects'
-                  spy={true} 
-                  smooth={true}
-                  duration={1000} 
-                  offset={-80}
-                  onClick={handleDrawerToggle}
-                  >
-                  Projects
-              </NavLink>
-          </ListItem>
+              className='nav-link-mobile'
+              activeClass="active"
+              to='home'
+              spy={true} 
+              smooth={true}
+              duration={1000} 
+              offset={-80}
+              onClick={handleDrawerToggle}
+              >
+              Home
+            </NavLink>
+        </ListItem>
+        <ListItem disablePadding sx={list_item_mobile}>
+            <NavLink 
+              className='nav-link-mobile'
+              activeClass="active"
+              to='about'
+              spy={true} 
+              smooth={true}
+              duration={1000} 
+              offset={-80}
+              onClick={handleDrawerToggle}
+              >
+              About
+            </NavLink>
+        </ListItem>
+        <ListItem disablePadding sx={list_item_mobile}>
+              <NavLink 
+                className='nav-link-mobile'
+                activeClass="active"
+                to='skills'
+                spy={true} 
+                smooth={true}
+                duration={1000} 
+                offset={-80}
+                onClick={handleDrawerToggle}
+                >
+                Skills
+            </NavLink>
+        </ListItem>
+        <ListItem disablePadding sx={list_item_mobile}>
+          <NavLink 
+                className='nav-link-mobile'
+                activeClass="active"
+                to='projects'
+                spy={true} 
+                smooth={true}
+                duration={1000} 
+                offset={-80}
+                onClick={handleDrawerToggle}
+                >
+                Projects
+            </NavLink>
+        </ListItem>
+        </>
+        ):(
+          <ListItem disablePadding sx={list_item_mobile}>
+          <Link 
+                className='nav-link-mobile active'
+                to='/'
+                onClick={handleDrawerToggle}
+                >
+                Go Back
+            </Link>
+        </ListItem>
+        )
+        
+        }
+          
       </List>
     </Box>
   );
 
-  const container = window !== undefined ? () => window().document.body : undefined;
+  const container = props.window !== undefined ? () => props.window().document.body : undefined;
 
   return (
     <Box sx={{ display: 'flex'}}>
@@ -119,6 +150,8 @@ function DrawerAppBar(props) {
             Aplz
           </Typography>
           <Box sx={{ display: { xs: 'none', md: 'block' } }}>
+          {bool?(
+            <>
               <NavLink 
                 className='nav-link'
                 activeClass="active"
@@ -163,14 +196,15 @@ function DrawerAppBar(props) {
                 >
                 PROJECTS
               </NavLink>
-              {/* <Button 
-                component={Link} 
-                href='/' 
-                sx={button_navbar}
+              </>
+          ):(
+            <Link 
+                className='nav-link active'
+                to='/'
                 >
-                Home
-              </Button> */}
-              
+                GO BACK
+              </Link>
+          )}              
           </Box>
         </Toolbar>
       </AppBar>

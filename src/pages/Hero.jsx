@@ -7,6 +7,7 @@ import SocialButtons from '../components/SocialButtons'
 import EditButton from '../components/EditButton'
 
 function Hero() {
+
   return (
     <section>
         <div className='container hero' id='home'>

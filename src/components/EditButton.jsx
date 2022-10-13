@@ -11,9 +11,9 @@ const EditButtonStyle = styled.button`
         box-shadow: 0 0 60px var(--btn-shadow-green-1);
     }
 `
-function EditButton({btnText,outline=false}) {
+function EditButton({btnText,outline=false,action}) {
   return (  
-    <EditButtonStyle outline={outline} className='button-component'>
+    <EditButtonStyle outline={outline} className='button-component' onClick={()=>{action()}}>
          {btnText}
     </EditButtonStyle>
   )
