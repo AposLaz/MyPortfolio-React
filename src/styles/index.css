@@ -190,9 +190,11 @@ h1,h2,h3,h4,h5,h6{
 .blog-card {
   display: flex;
   flex-direction: column;
-  margin: 1rem auto;
+
+  justify-content: flex-end;
+  
   box-shadow: 0 3px 7px -1px rgba(0, 0, 0, 0.288);
-  margin-bottom: 1.6%;
+  margin-bottom: 1rem;
   background: radial-gradient(circle at 10% 20%, rgba(216, 241, 230, 0.445) 0.1%, rgba(233, 226, 226, 0.349) 90.1%);
   line-height: 1.4;
   font-family: Montserrat-Regular;
