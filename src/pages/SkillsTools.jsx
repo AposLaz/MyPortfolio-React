@@ -56,7 +56,7 @@ function SkillsTools() {
               />
               <SkillsIcon
                 icon={<SiCss3 className='media-icon' style={codeIcon.technologies}/>}
-                desc='CSS'
+                desc='CSS3'
               />
               <SkillsIcon
                 icon={<SiDocker className='media-icon' style={codeIcon.technologies}/>}

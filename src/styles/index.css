@@ -588,6 +588,8 @@ h1,h2,h3,h4,h5,h6{
 /* ===================================== Media section ===================================== */
 
 @media only screen and (max-width: 1355px) {
+  
+
   .about-section{
     flex-direction: column;
   }
@@ -653,6 +655,14 @@ h1,h2,h3,h4,h5,h6{
     gap: 3rem;
   }
 
+  .hero-right .effect a{
+      width: 25px;
+      margin-right: 10px;
+    }
+
+    .about{
+     margin-top: 8rem;
+    }
 }
 
 @media only screen and (max-width: 725px) {
@@ -676,21 +686,27 @@ h1,h2,h3,h4,h5,h6{
       align-items: center;
       text-align: center;
       gap: 3rem;
+      
     }
 
-    .text-animation {
+    /* .text-animation {
       max-width: 400px;
-    }
+    } */
 
     .hero-left,
     .hero-right{
       flex: 1;
     }
 
+    .hero-left{
+      width: 82%;
+    }
+
 
     .hero-right .effect a{
       width: 25px;
       font-size: 21px;
+      margin-right: 0;
     }
     .hero-btn{
       flex-direction: column;
@@ -743,8 +759,34 @@ h1,h2,h3,h4,h5,h6{
     }
 }
 
+@media only screen and (max-width: 470px) {
+  .hero-left{
+      width: 78%;
+    }
+
+}
+
+@media only screen and (max-width: 470px) {
+  .hero-left{
+      width: 75%;
+    }
+
+
+  .skills-technical-middle{
+    flex-direction: column;
+    flex-wrap: wrap;
+    max-height: 400px;
+    margin-top: 2rem;
+    justify-content: space-around;
+  }
+
+}
+
 @media only screen and (max-width: 375px) {
-  
+  .skills-technical-middle{
+    max-height: 100%;
+  }
+
   .effect a {
     font-size: 20px;
     width: 30px;
