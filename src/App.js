@@ -11,9 +11,9 @@ function App() {
     <BrowserRouter>
         <NavBar />
         <Routes>
-          <Route path='/resume' element={<ViewResume />}/>
-          <Route path="/" element={<Home />}/>
-          {/* <Route path="*" element={<Navigate to="/resume" replace/>}/> */}
+          <Route exact path='/resume' element={<ViewResume />}/>
+          <Route exact path="/" element={<Home />}/>
+          <Route path="*" element={<Navigate to="/" replace/>}/>
         </Routes>
         <Footer />
     </BrowserRouter>
