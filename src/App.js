@@ -13,7 +13,7 @@ function App() {
         <Routes>
           <Route path='/resume' element={<ViewResume />}/>
           <Route path="/" element={<Home />}/>
-          <Route path="*" element={<Navigate to="/resume" replace/>}/>
+          {/* <Route path="*" element={<Navigate to="/resume" replace/>}/> */}
         </Routes>
         <Footer />
     </BrowserRouter>
