@@ -23,7 +23,8 @@ export const ViewResume = () => {
 
     const ToolbarSlot = (TransformToolbarSlot) => ({
         ...TransformToolbarSlot,
-        Open: () => <></>
+        Open: () => <></>,
+        OpenMenuItem: ()=><></>
     });
 
 
