@@ -13,7 +13,7 @@ function App() {
         <Routes>
           <Route exact path='/resume' element={<ViewResume />}/>
           <Route exact path="/" element={<Home />}/>
-          <Route path="/*" element={<Navigate replace to="/" />}/>
+          <Route path="*" element={<Navigate replace to="/" />}/>
         </Routes>
         <Footer />
     </BrowserRouter>

@@ -1,4 +1,4 @@
-import React from 'react'
+import React, {useEffect} from 'react'
 import Avatar from '@mui/material/Avatar'
 import AposLaz from '../assets/images/me-v2.jpg'
 import {avatar_style} from '../styles/styles'
@@ -7,6 +7,20 @@ import SocialButtons from '../components/SocialButtons'
 import EditButton from '../components/EditButton'
 
 function Hero() {
+
+  //rerender scroll to top
+  useEffect(() => {
+    window.scrollTo(0, 0)
+  }, [])
+
+  const redirectToSection = (id)=>{
+    const element = document.getElementById(id);
+    if (element) {
+      element.scrollIntoView({behavior: 'smooth'});
+    }
+
+  }
+
 
   return (
     <section>
@@ -26,10 +40,14 @@ function Hero() {
                   <EditButton 
                     btnText='About me'
                     outline={true}
+                    action={redirectToSection}
+                    id='about'
                   />
                   <EditButton
                     btnText='Skills & Tools'
                     outline={false}
+                    action={redirectToSection}
+                    id='skills'
                   />
                 </div>
               </div>
