@@ -16,16 +16,22 @@ import {nav_mobile_style} from '../styles/styles'
 import {list_item_mobile} from '../styles/styles'
 import {navbar_style} from '../styles/styles'
 
-import {Link, useLocation} from 'react-router-dom' 
+import {Link, useLocation,useNavigate} from 'react-router-dom' 
 
 const drawerWidth = 300;
 
 function DrawerAppBar(props) {
 
+  
   //change NavBar status
   const [bool,setBool] = React.useState(true)
 
   let location = useLocation();
+  let navigate = useNavigate();
+
+  const NavToHome = ()=>{
+    navigate('/')
+  }
 
   React.useEffect(()=>{
     if(location.pathname === '/resume') {
@@ -45,7 +51,7 @@ function DrawerAppBar(props) {
   //NavBar for mobile
   const drawer = (
     <Box onClick={handleDrawerToggle} sx={ nav_mobile_style }>
-      <Typography variant="h6" sx={{ my: 2, fontFamily: 'cursive', fontSize: '2rem', fontWeight: 'bolder'}}>
+      <Typography variant="h6" sx={{ my: 2, fontFamily: 'cursive', fontSize: '2rem', fontWeight: 'bolder', cursor: 'pointer'}} onClick={()=>{NavToHome()}}>
         Aplz
       </Typography>
       <Divider />
@@ -145,7 +151,8 @@ function DrawerAppBar(props) {
           <Typography
             variant="h6"
             component="div"
-            sx={{ flexGrow: 1, display: { xs: 'none', md: 'block' } ,fontFamily: 'cursive', fontSize: '40px', fontWeight: 'bolder', transform: 'skewX(-0.04turn)' }}
+            sx={{ flexGrow: 1, display: { xs: 'none', md: 'block' } ,fontFamily: 'cursive', fontSize: '40px', fontWeight: 'bolder', transform: 'skewX(-0.04turn)', cursor: 'pointer' }}
+            onClick={()=>{NavToHome()}}
           >
             Aplz
           </Typography>

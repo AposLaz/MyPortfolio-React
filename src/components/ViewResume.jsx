@@ -1,4 +1,4 @@
-import React from 'react'
+import React, {useEffect} from 'react'
 // Import the main component
 import { Viewer } from '@react-pdf-viewer/core'; // install this library
 // Plugins
@@ -17,6 +17,11 @@ import '@react-pdf-viewer/toolbar/lib/styles/index.css';
 import viewPdf from '../assets/files/cv-Lazidis.pdf'
 import { openPlugin } from '@react-pdf-viewer/open';
 export const ViewResume = () => {
+
+    //rerender scroll to top
+    useEffect(() => {
+      window.scrollTo(0, 0)
+    }, [])
 
      const toolbarPluginInstance = toolbarPlugin();
     const { renderDefaultToolbar, Toolbar } = toolbarPluginInstance;
