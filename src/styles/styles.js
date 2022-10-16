@@ -1,4 +1,3 @@
-import { red } from "@mui/material/colors"
 
 export const avatar_style = {
     home :{
