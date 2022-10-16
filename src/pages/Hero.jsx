@@ -18,7 +18,6 @@ function Hero() {
     if (element) {
       element.scrollIntoView({behavior: 'smooth'});
     }
-
   }
 
 

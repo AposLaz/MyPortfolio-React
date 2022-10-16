@@ -18,7 +18,7 @@ import {navbar_style} from '../styles/styles'
 
 import {Link, useLocation,useNavigate} from 'react-router-dom' 
 
-const drawerWidth = 300;
+const drawerWidth = '100%';
 
 function DrawerAppBar(props) {
 
@@ -50,7 +50,7 @@ function DrawerAppBar(props) {
   
   //NavBar for mobile
   const drawer = (
-    <Box onClick={handleDrawerToggle} sx={ nav_mobile_style }>
+    <Box onClick={handleDrawerToggle} sx={ nav_mobile_style } >
       <Typography variant="h6" sx={{ my: 2, fontFamily: 'cursive', fontSize: '2rem', fontWeight: 'bolder', cursor: 'pointer'}} onClick={()=>{NavToHome()}}>
         Aplz
       </Typography>
@@ -114,6 +114,14 @@ function DrawerAppBar(props) {
                 Projects
             </NavLink>
         </ListItem>
+        <ListItem disablePadding sx={list_item_mobile}>
+          <Link 
+                className='nav-link-mobile'
+                to='/resume'
+                >
+                Resume
+            </Link>
+        </ListItem>
         </>
         ):(
           <ListItem disablePadding sx={list_item_mobile}>
@@ -125,9 +133,7 @@ function DrawerAppBar(props) {
                 Go Back
             </Link>
         </ListItem>
-        )
-        
-        }
+        )}
           
       </List>
     </Box>
@@ -203,6 +209,12 @@ function DrawerAppBar(props) {
                 >
                 PROJECTS
               </NavLink>
+              <Link 
+                className='nav-link'
+                to='/resume'
+                >
+                RESUME
+              </Link>
               </>
           ):(
             <Link 

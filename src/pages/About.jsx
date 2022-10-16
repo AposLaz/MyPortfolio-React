@@ -5,27 +5,18 @@ import EditCard from '../components/EditCard'
 import { useNavigate } from "react-router-dom";
 
 function About() {
-    const DownloadResume = (e)=>{
-        e.preventDefault()
-        console.log('OK')
-        // using Java Script method to get PDF file
-        fetch('cv-Lazidis.pdf').then(response => {
-            response.blob().then(blob => {
-                // Creating new object of PDF file
-                const fileURL = window.URL.createObjectURL(blob);
-                // Setting various property values
-                let alink = document.createElement('a');
-                alink.href = fileURL;
-                alink.download = 'cvLazidis.pdf';
-                alink.click();
-            })
-        })
-    }
     let navigate = useNavigate(); 
 
     const ViewResumeFunc = ()=>{
         navigate('/resume')
     }
+
+    const redirectToSection = (id)=>{
+        const element = document.getElementById(id);
+        if (element) {
+          element.scrollIntoView({behavior: 'smooth'});
+        }
+      }    
 
   return (
     <div className='container about' id='about'>
@@ -55,13 +46,14 @@ function About() {
                 </p>
                 <div className='btn-download-cv'>
                     <EditButton 
-                        btnText='Download CV'
+                        btnText='View Resume'
                         outline={true}
-                        onClick={DownloadResume}
+                        onClick={ViewResumeFunc}
                     />
                     <EditButton
-                        btnText='View CV'
-                        action={ViewResumeFunc}
+                        btnText='View Projects'
+                        action={redirectToSection}
+                        id='projects'
                     />
                 </div>
             </div>

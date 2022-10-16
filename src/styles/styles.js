@@ -1,3 +1,4 @@
+import { red } from "@mui/material/colors"
 
 export const avatar_style = {
     home :{
@@ -141,7 +142,7 @@ export const projectCardGitIcon = {
  */
 
 export const nav_mobile_style = {
-    textAlign: 'center',
+    textAlign: 'center'
 }
 
 export const list_item_mobile = {
