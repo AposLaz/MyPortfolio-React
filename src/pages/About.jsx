@@ -48,7 +48,7 @@ function About() {
                     <EditButton 
                         btnText='View Resume'
                         outline={true}
-                        onClick={ViewResumeFunc}
+                        action={ViewResumeFunc}
                     />
                     <EditButton
                         btnText='View Projects'
