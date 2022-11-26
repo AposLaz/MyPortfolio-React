@@ -16,11 +16,14 @@ import '@react-pdf-viewer/toolbar/lib/styles/index.css';
 
 import viewPdf from '../assets/files/cv-Lazidis.pdf'
 import { openPlugin } from '@react-pdf-viewer/open';
+import ReactGA from 'react-ga'
+
 export const ViewResume = () => {
 
     //rerender scroll to top
     useEffect(() => {
-      window.scrollTo(0, 0)
+      window.scrollTo(0, 0);
+      ReactGA.pageview(window.location.pathname);   //google analytics
     }, [])
 
      const toolbarPluginInstance = toolbarPlugin();

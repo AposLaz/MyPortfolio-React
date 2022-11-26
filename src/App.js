@@ -3,6 +3,11 @@ import {BrowserRouter, Routes, Route, Navigate } from 'react-router-dom'
 import Home from './pages/Home';
 import Footer from './components/Footer';
 import ViewResume from './components/ViewResume';
+import ReactGA from 'react-ga'
+
+
+const TRACKING_ID = "G-4W1HHPVY7N"; //TRacking ID for google analytics
+ReactGA.initialize(TRACKING_ID); //initialize
 
 function App() {
   
