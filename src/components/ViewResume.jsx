@@ -17,6 +17,7 @@ import '@react-pdf-viewer/toolbar/lib/styles/index.css';
 import viewPdf from '../assets/files/cv-Lazidis.pdf'
 import { openPlugin } from '@react-pdf-viewer/open';
 import ReactGA from 'react-ga'
+import { Helmet } from 'react-helmet';
 
 export const ViewResume = () => {
 
@@ -37,8 +38,22 @@ export const ViewResume = () => {
 
 
   return (
-    
-    <div className='container' id='resume'>
+    <>
+      <Helmet>
+            <title>Aplaz Portfolio</title>
+            <meta
+              name="description"
+              content="Apostolos Lazidis Resume."
+            />
+            <meta
+              name="keywords"
+              content="Apostolos, Lazidis, Apostolos Lazidis, 
+                        apostolos, lazidis, apostolos lazidis, 
+                        Απόστολος Λαζίδης, αποστολος λαζιδης, αποστολης, 
+                        τολης, Αποστολης, Τολης, Kafka, Apache Kafka, RabbitMQ"
+            />
+        </Helmet>
+        <div className='container' id='resume'>
     
       <div className='resume-cls'>
         <NewSection 
@@ -87,6 +102,9 @@ export const ViewResume = () => {
 
         </div>
     </div>
+    </>
+    
+    
     
   )
 }

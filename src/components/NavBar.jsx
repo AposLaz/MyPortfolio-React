@@ -52,7 +52,7 @@ function DrawerAppBar(props) {
   const drawer = (
     <Box onClick={handleDrawerToggle} sx={ nav_mobile_style } >
       <Typography variant="h6" sx={{ my: 2, fontFamily: 'cursive', fontSize: '2rem', fontWeight: 'bolder', cursor: 'pointer'}} onClick={()=>{NavToHome()}}>
-        Aplz
+        Aplaz
       </Typography>
       <Divider />
       <List>
@@ -160,7 +160,7 @@ function DrawerAppBar(props) {
             sx={{ flexGrow: 1, display: { xs: 'none', md: 'block' } ,fontFamily: 'cursive', fontSize: '40px', fontWeight: 'bolder', transform: 'skewX(-0.04turn)', cursor: 'pointer' }}
             onClick={()=>{NavToHome()}}
           >
-            Aplz
+            Aplaz
           </Typography>
           <Box sx={{ display: { xs: 'none', md: 'block' } }}>
           {bool?(
