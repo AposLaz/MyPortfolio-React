@@ -15,6 +15,28 @@ export const avatar_style = {
     }
 }
 
+export const logo_style = {
+    desktop: {
+        width: 90,
+        height: 90,
+        cursor: 'pointer',
+        paddingLeft: '1px',
+        backgroundColor: 'transparent',
+        display: { xs: 'none', md: 'block' }
+    },
+    img: {
+        objectFit: 'cover',
+        width: 90,
+        height: 90,
+    },
+    mobile: {
+        width: 77,
+        height: 77,
+        margin: '0 auto',
+        cursor: 'pointer'  
+    }
+}
+
 export const codeIcon = {
     skills: {
         fontSize: '100px',
@@ -153,7 +175,8 @@ export const list_item_mobile = {
 }
 
 export const navbar_style = {
-    background: 'linear-gradient(to left top,#02AABD, #00CDAC)'
+    background: 'linear-gradient(to left top,#02AABD, #00CDAC)',
+    padding: '5px'
 }
 
 export const button_navbar = {

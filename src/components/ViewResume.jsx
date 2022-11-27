@@ -17,7 +17,7 @@ import '@react-pdf-viewer/toolbar/lib/styles/index.css';
 import viewPdf from '../assets/files/cv-Lazidis.pdf'
 import { openPlugin } from '@react-pdf-viewer/open';
 import ReactGA from 'react-ga'
-import { Helmet } from 'react-helmet';
+import { Helmet } from 'react-helmet-async';
 
 export const ViewResume = () => {
 
@@ -39,11 +39,15 @@ export const ViewResume = () => {
 
   return (
     <>
-      <Helmet>
-            <title>Aplaz Portfolio</title>
+      <Helmet prioritizeSeoTags>
+            <title>Aplaz Resume</title>
+            <meta property='og:title' content='Aplaz Resume'/>
+            <meta property='og:site_name' content='Aplaz Resume'/>
+            <meta property='og:url' content='https://www.aplaz.gr/resume'/>
+            <meta property='og:type' content='website' />
             <meta
               name="description"
-              content="Apostolos Lazidis Resume."
+              content="Here you will find Apostolos Lazidis (Aplaz) Resume."
             />
             <meta
               name="keywords"

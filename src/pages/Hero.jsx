@@ -52,7 +52,7 @@ function Hero() {
               </div>
             </div>
             <div className='hero-right'>
-              <Avatar className='avatar' src={AposLaz} alt='ApostolosLazids' sx={avatar_style.home}/>
+              <Avatar className='avatar' src={AposLaz} alt='Apostolos Lazids' sx={avatar_style.home}/>
               <div className='social-hero'>
                 <SocialButtons /> 
               </div>

@@ -12,12 +12,15 @@ import Typography from '@mui/material/Typography';
 import { Link as NavLink } from 'react-scroll';
 
 //Style for mobile nav
-import {nav_mobile_style} from '../styles/styles'
+import {logo_style, nav_mobile_style} from '../styles/styles'
 import {list_item_mobile} from '../styles/styles'
 import {navbar_style} from '../styles/styles'
 
 import {Link, useLocation,useNavigate} from 'react-router-dom' 
+import { Avatar } from '@mui/material';
 
+import Logo from '../assets/images/logo.png'
+import Logo1 from '../assets/images/logo-1.png'
 const drawerWidth = '100%';
 
 function DrawerAppBar(props) {
@@ -51,9 +54,15 @@ function DrawerAppBar(props) {
   //NavBar for mobile
   const drawer = (
     <Box onClick={handleDrawerToggle} sx={ nav_mobile_style } >
-      <Typography variant="h6" sx={{ my: 2, fontFamily: 'cursive', fontSize: '2rem', fontWeight: 'bolder', cursor: 'pointer'}} onClick={()=>{NavToHome()}}>
+      <Avatar 
+          sx={logo_style.mobile} 
+          alt='aplaz logo' 
+          src={Logo1}
+          onClick={()=>{NavToHome()}}
+      />
+      {/* <Typography variant="h6" sx={{ my: 2, fontFamily: 'cursive', fontSize: '2rem', fontWeight: 'bolder', cursor: 'pointer'}} onClick={()=>{NavToHome()}}>
         Aplaz
-      </Typography>
+      </Typography> */}
       <Divider />
       <List>
         {bool?(
@@ -154,14 +163,22 @@ function DrawerAppBar(props) {
           >
             <MenuIcon />
           </IconButton>
-          <Typography
+          <div style={{flexGrow: 1}}>
+            <Avatar 
+              sx={logo_style.desktop} 
+              onClick={()=>{NavToHome()}}
+            >
+              <img style={logo_style.img} alt='aplaz logo' src={Logo}/>
+            </Avatar>
+          </div>
+          {/* <Typography
             variant="h6"
             component="div"
             sx={{ flexGrow: 1, display: { xs: 'none', md: 'block' } ,fontFamily: 'cursive', fontSize: '40px', fontWeight: 'bolder', transform: 'skewX(-0.04turn)', cursor: 'pointer' }}
             onClick={()=>{NavToHome()}}
           >
             Aplaz
-          </Typography>
+          </Typography> */}
           <Box sx={{ display: { xs: 'none', md: 'block' } }}>
           {bool?(
             <>
